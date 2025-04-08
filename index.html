@@ -16,6 +16,28 @@
         .fundo-galeria {
             background-color: #2c2c2c; /* Fundo da galeria */
         }
+        .inicio-fundo {
+            position: relative;
+            background-image: url('img cars/dg018_085clc4j3m3pu92bgd8bo6f70t4v50h1.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Altura da seção */
+            color: white; /* Cor do texto */
+        }
+        .inicio-fundo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+            z-index: 1; /* Coloca a sobreposição acima da imagem */
+        }
+        .esquerda-conteudo {
+            position: relative; /* Para que o texto fique acima da sobreposição */
+            z-index: 2; /* Coloca o texto acima da sobreposição */
+        }
     </style>
 </head>
 
@@ -40,83 +62,11 @@
     </header>
 
     <main class="container my-5">
-        <section id="inicio" class="my-5">
-            <div class="inicio-fundo d-flex justify-content-between align-items-center">
+        <section id="inicio" class="my-5 inicio-fundo">
+            <div class="d-flex justify-content-between align-items-center">
                 <div class="esquerda-conteudo">
                     <h1 class="display-4 text-white fst-italic fw-bold">Boas-vindas a Evolutions Cars</h1>
                     <img src="img cars/ram_1500_trx_3_edited.webp" class="mb-3" width="563" height="278" loading="lazy">
                     <a href="#evolutions-cars" class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero conhecer!</a>
                 </div>
-                <img src="img cars/ram_1500_trx_3_edited.webp" alt="Caminhonete nova" class="img-fluid img-inicio"> <!-- Caminhonete nova -->
-            </div>
-        </section>
-
-        <section id="evolutions-cars" class="my-5 pt-6 secao-evolutions-cars" tabindex="0" aria-label="Seção explicativa sobre a evolução das caminhonetes">
-            <div class="container d-flex align-items-center ">
-                <div class="col-4 d-flex justify-content-center ">
-                    <img src="img cars/dg018_085clc4j3m3pu92bgd8bo6f70t4v50h1.webp" class="rounded-pill" width="273" height="331" loading="lazy"> <!-- Caminhonete antiga -->
-                </div>
-                <div class="col-5">
-                    <h2>Curiosidades sobre as Evoluções das Caminhonetes</h2>
-                    <p class="p-2">As caminhonetes evoluíram significativamente desde sua criação no início do século XX. Inicialmente, eram veículos utilitários simples, mas com o tempo, passaram a incorporar tecnologias modernas, conforto e design arrojado. Hoje, as caminhonetes são populares tanto para trabalho quanto para lazer, oferecendo uma combinação de robustez e sofisticação.</p>
-                    <p class="p-2">Curiosidade: A primeira caminhonete foi produzida pela Ford em 1925, e desde então, o segmento só cresceu! As caminhonetes modernas agora incluem recursos como conectividade, sistemas de segurança avançados e eficiência de combustível.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens">
-            <h2 class="text-center pt-5 text-white">Galeria</h2>
-            <div class="container p-3 mt-3 fundo-galeria">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img cars/dodge-challenger-srt-demon-6.jpg" class="img-fluid rounded-5" loading="lazy"> <!-- Caminhonete antiga -->
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img cars/dg018_085clc4j3m3pu92bgd8bo6f70t4v50h1.webp" class="img-fluid rounded-5" loading="lazy"> <!-- Caminhonete nova -->
-                    </div>
-                </div>
-                <div class="row mt-4 justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img cars/2023_dodge_challenger-srt-demon-170_img_1107-48505.webp" class="img-fluid rounded-5" loading="lazy"> <!-- Caminhonete antiga -->
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img cars/ram_1500_trx_3_edited.webp" class="img-fluid rounded-5" loading="lazy"> <!-- Caminhonete nova -->
-                    </div>
-                </div>
-             </div>
-        </section>
-
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
-                    <h2 class="mb-3 text-white">Entre em contato</h2>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome" class="text-white">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email" class="text-white">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="Digite seu email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem" class="text-white">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem"></textarea>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="text-center p-3 fst-italic text-white">
-        <p>Acesse nossas redes:</p>
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-tiktok"></i>
-        <p class="mt-3">Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
-    <script src="script.js">
+                <img src="img cars/ram_1500_trx_3_edited.webp" alt="Caminhonete nova" class="img-fluid img-inicio"> <!-- Caminhon
